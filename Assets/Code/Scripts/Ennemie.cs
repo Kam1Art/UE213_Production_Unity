@@ -1,0 +1,69 @@
+using PathCreation;
+using PathCreation.Examples;
+using System;
+using UnityEngine;
+
+public class Ennemie : MonoBehaviour
+{
+    public EnnemieType type;
+    public PathFollower vehicle;
+    public float heightOffset;
+    public Int32 beat;
+    public float offset;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
+#if UNITY_EDITOR
+    private void OnValidate() => UnityEditor.EditorApplication.delayCall += _OnValidate;
+
+    private void _OnValidate()
+    {
+        UnityEditor.EditorApplication.delayCall -= _OnValidate;
+        if (this == null) return;
+
+        if (transform.parent != null)
+        {
+            EnnemieCreator creator = transform.parent.GetComponent<EnnemieCreator>();
+            if (creator != null)
+            {
+                creator.updateEnnemie(this);
+            }
+        }
+    }
+#endif
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Player"))
+        {
+            if(type == EnnemieType.Block)
+            {
+                Debug.Log("Block");
+                vehicle.speed = 0;
+            }
+
+            if(type == EnnemieType.Slow)
+            {
+                Debug.Log("Slow");
+                vehicle.speed = 1.5f;
+            }
+        }
+    }
+}
+
+public enum EnnemieType { 
+    Block,
+    Slow
+};
+
+

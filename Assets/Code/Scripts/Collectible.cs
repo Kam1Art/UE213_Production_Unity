@@ -1,3 +1,5 @@
+using PathCreation;
+using PathCreation.Examples;
 using System;
 using UnityEngine;
 

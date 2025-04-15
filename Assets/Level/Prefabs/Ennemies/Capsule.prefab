@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  vehicle: {fileID: 0}
   heightOffset: 0.15
   beat: 0
   offset: 0

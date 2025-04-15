@@ -46,6 +46,8 @@ public class Ennemie : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            PathFollower vehicle = other.GetComponent<PathFollower>();
+
             if(type == EnnemieType.Block)
             {
                 Debug.Log("Block");

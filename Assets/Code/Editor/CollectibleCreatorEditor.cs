@@ -6,11 +6,13 @@ using UnityEngine;
 public class CollectibleCreatorEditor : Editor
 {
     SerializedProperty prefabs;
+    SerializedProperty randPrefab;
 
 
     private void OnEnable()
     {
         prefabs = serializedObject.FindProperty("prefabs");
+        randPrefab = serializedObject.FindProperty("prefab");
     }
 
     public override void OnInspectorGUI()
@@ -27,6 +29,10 @@ public class CollectibleCreatorEditor : Editor
 
         EditorGUILayout.LabelField("Random Path Generator", EditorStyles.boldLabel);
         
+        serializedObject.Update();
+        EditorGUILayout.PropertyField(randPrefab, true);
+        serializedObject.ApplyModifiedProperties();
+
         //myScript.prefab = (GameObject)EditorGUILayout.ObjectField("Collectible", myScript.prefab, typeof(GameObject), true);
         myScript.beatsBeforeSpawning = EditorGUILayout.IntField("Starting spawn beat", myScript.beatsBeforeSpawning);
         myScript.beatsBetweenSpawn = EditorGUILayout.IntField("Beat gap between spawn", myScript.beatsBetweenSpawn);

@@ -15,7 +15,6 @@ public class CollectibleCreator : MonoBehaviour
 
     // Random Path Creator
     public GameObject[] prefab;
-    public GameObject content;
     public Int32 beatsBetweenSpawn;
     public Int32 spawnGroupSize;
     public Int32 beatsBetweenGroup;
@@ -179,7 +178,7 @@ public class CollectibleCreator : MonoBehaviour
             return;
         }
         
-        content = prefab[UnityEngine.Random.Range(0, (prefab.Length) - 1)]; 
+        GameObject content = prefab[UnityEngine.Random.Range(0, prefab.Length)]; 
 
         Collectible collectible = content.GetComponent<Collectible>();
         if (collectible == null)
@@ -209,7 +208,8 @@ public class CollectibleCreator : MonoBehaviour
         // Loop through all the beats of the music
         for (var i = startingBeat; i < totalBeats; i++)
         {
-
+            content = prefab[UnityEngine.Random.Range(0, prefab.Length)];
+            
             if (distance < pathCreator.path.length)
             {
                 Debug.Log(distance);

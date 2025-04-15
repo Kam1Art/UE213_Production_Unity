@@ -14,7 +14,8 @@ public class CollectibleCreator : MonoBehaviour
     public GameObject[] prefabs;
 
     // Random Path Creator
-    public GameObject prefab;
+    public GameObject[] prefab;
+    public GameObject content;
     public Int32 beatsBetweenSpawn;
     public Int32 spawnGroupSize;
     public Int32 beatsBetweenGroup;
@@ -177,8 +178,10 @@ public class CollectibleCreator : MonoBehaviour
         {
             return;
         }
+        
+        content = prefab[UnityEngine.Random.Range(0, (prefab.Length) - 1)]; 
 
-        Collectible collectible = prefab.GetComponent<Collectible>();
+        Collectible collectible = content.GetComponent<Collectible>();
         if (collectible == null)
         {
             return;
@@ -214,7 +217,7 @@ public class CollectibleCreator : MonoBehaviour
                 Vector3 spawnPosition = new Vector3();
                 Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
-                GameObject cube = Instantiate(prefab, spawnPosition, spawnRotation);
+                GameObject cube = Instantiate(content, spawnPosition, spawnRotation);
                 cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 cube.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (cube.transform.right * spawnOffset) + (cube.transform.up * collectible.heightOffset);
                 cube.transform.parent = transform;

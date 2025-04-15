@@ -49,5 +49,6 @@ public class Collectible : MonoBehaviour
 
 
 public enum CollectibleType { 
-    Cube
+    Cube,
+    Sphere
 };

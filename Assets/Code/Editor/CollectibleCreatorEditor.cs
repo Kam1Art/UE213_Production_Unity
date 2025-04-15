@@ -26,8 +26,8 @@ public class CollectibleCreatorEditor : Editor
         GUILayout.Space(20);
 
         EditorGUILayout.LabelField("Random Path Generator", EditorStyles.boldLabel);
-
-        myScript.prefab = (GameObject)EditorGUILayout.ObjectField("Collectible", myScript.prefab, typeof(GameObject), true);
+        
+        //myScript.prefab = (GameObject)EditorGUILayout.ObjectField("Collectible", myScript.prefab, typeof(GameObject), true);
         myScript.beatsBeforeSpawning = EditorGUILayout.IntField("Starting spawn beat", myScript.beatsBeforeSpawning);
         myScript.beatsBetweenSpawn = EditorGUILayout.IntField("Beat gap between spawn", myScript.beatsBetweenSpawn);
         myScript.spawnGroupSize = EditorGUILayout.IntField("Spawn group size", myScript.spawnGroupSize);

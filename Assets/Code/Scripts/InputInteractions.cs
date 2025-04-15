@@ -21,12 +21,9 @@ public class InputInteractions : MonoBehaviour
     public void Left()
     {
         PathFollower pathFollower = vehicle.GetComponent<PathFollower>();
-        if (pathFollower.isAlive == true)
-        {
-            float tempOffset = pathFollower.offset - pathFollower.widthOffset;
-            pathFollower.offset = Mathf.Max(tempOffset, -pathFollower.widthOffset);
-        }
-        else return;
+        float tempOffset = pathFollower.offset - pathFollower.widthOffset;
+        pathFollower.offset = Mathf.Max(tempOffset, -pathFollower.widthOffset);
+        
         
         
     }
@@ -35,11 +32,8 @@ public class InputInteractions : MonoBehaviour
     {
 
         PathFollower pathFollower = vehicle.GetComponent<PathFollower>();
-        if (pathFollower.isAlive == true)
-        {
-            float tempOffset = pathFollower.offset + pathFollower.widthOffset;
-            pathFollower.offset = Mathf.Min(tempOffset, pathFollower.widthOffset);
-        }
-        else return;
+        float tempOffset = pathFollower.offset + pathFollower.widthOffset;
+        pathFollower.offset = Mathf.Min(tempOffset, pathFollower.widthOffset);
+        
     }
 }

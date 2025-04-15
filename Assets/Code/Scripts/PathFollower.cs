@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 namespace PathCreation.Examples
 {
@@ -11,6 +12,7 @@ namespace PathCreation.Examples
         [Header("Path Manager")]
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
+        public Camera camera;
         public float speed = 5;
         public float widthOffset;
         public float offsetSpeed = 1.0f;
@@ -20,7 +22,8 @@ namespace PathCreation.Examples
         private float distanceTravelled;
         private float currentOffset;
         private InputSystem_Actions controls;
-        [System.NonSerialized] public bool isAlive = true;
+        private bool canRotate = true;
+
 
         public void OnEnable()
         {
@@ -70,6 +73,7 @@ namespace PathCreation.Examples
 
         void Update()
         {
+
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;
@@ -89,10 +93,21 @@ namespace PathCreation.Examples
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
 
-        public void DeadEnd()
+        public void RotateCamera()
         {   
-            isAlive = false;
-            OnDisable();
+            if(canRotate == true)
+            {
+                canRotate = false;
+                camera.transform.Rotate(0, 0, 180);
+                StartCoroutine(ResetCanRotate(5f));
+            }   
+        }
+
+        IEnumerator ResetCanRotate(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            camera.transform.Rotate(0, 0, 180);
+            canRotate = true;
         }
 
     }

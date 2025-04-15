@@ -11,6 +11,7 @@ public class Ennemie : MonoBehaviour
     public Int32 beat;
     public float offset;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,16 +49,13 @@ public class Ennemie : MonoBehaviour
         {
             PathFollower vehicle = other.GetComponent<PathFollower>();
 
-            if(type == EnnemieType.Block)
+            if(type == EnnemieType.UpsideDown)
             {
-                Debug.Log("Block");
-                vehicle.speed = 0;
-                vehicle.DeadEnd();
+                vehicle.RotateCamera();
             }
 
             if(type == EnnemieType.Slow)
             {
-                Debug.Log("Slow");
                 vehicle.speed = 1.5f;
             }
         }
@@ -65,7 +63,7 @@ public class Ennemie : MonoBehaviour
 }
 
 public enum EnnemieType { 
-    Block,
+    UpsideDown,
     Slow
 };
 

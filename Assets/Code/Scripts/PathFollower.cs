@@ -20,6 +20,7 @@ namespace PathCreation.Examples
         private float distanceTravelled;
         private float currentOffset;
         private InputSystem_Actions controls;
+        [System.NonSerialized] public bool isAlive = true;
 
         public void OnEnable()
         {
@@ -87,5 +88,12 @@ namespace PathCreation.Examples
         {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
+
+        public void DeadEnd()
+        {   
+            isAlive = false;
+            OnDisable();
+        }
+
     }
 }

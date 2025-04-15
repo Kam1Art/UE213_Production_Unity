@@ -52,6 +52,7 @@ public class Ennemie : MonoBehaviour
             {
                 Debug.Log("Block");
                 vehicle.speed = 0;
+                vehicle.DeadEnd();
             }
 
             if(type == EnnemieType.Slow)

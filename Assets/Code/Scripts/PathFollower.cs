@@ -18,6 +18,7 @@ namespace PathCreation.Examples
         public float offsetSpeed = 1.0f;
         public float heightOffset = 0.0f;
         public float offset { get; set; }
+        public float timeToTravel { get; set; }
 
         private float distanceTravelled;
         private float currentOffset;

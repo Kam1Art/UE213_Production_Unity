@@ -59,7 +59,7 @@ public class Ennemie : MonoBehaviour
 
             if(type == EnnemieType.Slow)
             {
-                vehicle.speed = 1.5f;
+                vehicle.SlowDown();
             }
         }
     }

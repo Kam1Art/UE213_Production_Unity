@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseButton, pausePanel;
+    public GameObject pauseButton, pauseMenu;
 
     public void OnPause()
     {
-        pausePanel.SetActive(true);
+        pauseMenu.SetActive(true);
         pauseButton.SetActive(false);
         Time.timeScale = 0;
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnUnPause()
     {
-        pausePanel.SetActive(false);
+        pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
         Time.timeScale = 1;
         AudioSource[] audios = FindObjectsOfType<AudioSource>();

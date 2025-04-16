@@ -2627,6 +2627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1751585375}
   endOfPathInstruction: 0
+  camera: {fileID: 1514366758}
   speed: 2
   widthOffset: 1
   offsetSpeed: 3
@@ -5011,7 +5012,10 @@ MonoBehaviour:
   vehicle: {fileID: 560938462}
   prefabs:
   - {fileID: 4033822839321833552, guid: f19b52bc2573b4e508c60232d5ba4c53, type: 3}
-  prefab: {fileID: 4033822839321833552, guid: f19b52bc2573b4e508c60232d5ba4c53, type: 3}
+  prefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   beatsBetweenSpawn: 1
   spawnGroupSize: 2
   beatsBetweenGroup: 2

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Ennemie : MonoBehaviour
 {
     public EnnemieType type;
-    public PathFollower vehicle;
     public float heightOffset;
     public Int32 beat;
     public float offset;

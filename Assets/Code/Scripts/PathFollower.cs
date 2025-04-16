@@ -94,6 +94,11 @@ namespace PathCreation.Examples
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
 
+        public void ComputeTravelTime()
+        {
+            timeToTravel = (pathCreator.path.length / ((speed * Time.deltaTime) * (1f / Time.deltaTime)));
+        }
+
         public void RotateCamera()
         {   
             if(canRotate == true)

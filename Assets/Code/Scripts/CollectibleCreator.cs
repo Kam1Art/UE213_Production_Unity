@@ -135,7 +135,7 @@ public class CollectibleCreator : MonoBehaviour
         foreach (CollectibleData collectibleData in saveObject.collectibles)
         {
             float distance = baseDistance + secPerBeat * vehicleData.speed * collectibleData.beat;
-            Debug.Log(distance);
+            
             // Spawn the collectible
             Vector3 spawnPosition = new Vector3();
             Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, vehicleData.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
@@ -218,7 +218,7 @@ public class CollectibleCreator : MonoBehaviour
                 Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
                 GameObject cube = Instantiate(content, spawnPosition, spawnRotation);
-                cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
                 cube.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (cube.transform.right * spawnOffset) + (cube.transform.up * collectible.heightOffset);
                 cube.transform.parent = transform;
 

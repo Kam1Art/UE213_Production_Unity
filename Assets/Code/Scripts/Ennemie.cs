@@ -43,6 +43,10 @@ public class Ennemie : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if (other.)
+        {
+            
+        }
 
         if (other.CompareTag("Player"))
         {

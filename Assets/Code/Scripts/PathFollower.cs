@@ -81,6 +81,11 @@ namespace PathCreation.Examples
 
         void Update()
         {
+            
+            if (canRotate == false)
+            {
+                //camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, Quaternion.Euler(camera.transform.rotation.x, 0, 180) , 0.1f );
+            }
 
             if (pathCreator != null)
             {
@@ -118,7 +123,7 @@ namespace PathCreation.Examples
             if(canRotate == true)
             {
                 canRotate = false;
-                camera.transform.Rotate(0, 0, 180);
+            
                 StartCoroutine(ResetCanRotate(5f));
             }   
         }

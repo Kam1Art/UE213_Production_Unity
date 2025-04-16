@@ -212,16 +212,16 @@ public class EnnemieCreator : MonoBehaviour
             if (distance < pathCreator.path.length)
             {
                 Debug.Log(distance);
-                // Spawn collectible
+                // Spawn ennemie
                 Vector3 spawnPosition = new Vector3();
                 Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
-                GameObject cube = Instantiate(content, spawnPosition, spawnRotation);
-                cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                cube.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (cube.transform.right * spawnOffset) + (cube.transform.up * ennemie.heightOffset);
-                cube.transform.parent = transform;
+                GameObject newEnnemie = Instantiate(content, spawnPosition, spawnRotation);
+                //newEnnemie.transform.localScale = new Vector3(1f, 1f, 1f);
+                newEnnemie.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (newEnnemie.transform.right * spawnOffset) + (newEnnemie.transform.up * ennemie.heightOffset);
+                newEnnemie.transform.parent = transform;
 
-                Ennemie ennemieSpawned = cube.GetComponent<Ennemie>();
+                Ennemie ennemieSpawned = newEnnemie.GetComponent<Ennemie>();
                 if (ennemieSpawned != null)
                 {
                     ennemieSpawned.beat = i;

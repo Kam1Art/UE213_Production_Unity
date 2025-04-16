@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using static CollectibleCreator;
-
-public class CollectibleCreator : MonoBehaviour
+using static EnnemieCreator;
+public class EnnemieCreator : MonoBehaviour
 {
     public PathCreator pathCreator;
     public GameObject vehicle;
@@ -39,24 +38,24 @@ public class CollectibleCreator : MonoBehaviour
     {
         SaveObject saveObject = new SaveObject();
 
-        saveObject.collectibles = new();
+        saveObject.ennemies = new();
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject prefab = transform.GetChild(i).gameObject;
-            Collectible collectible = prefab.GetComponent<Collectible>();
+            Ennemie ennemie = prefab.GetComponent<Ennemie>();
 
-            if (collectible != null)
+            if (ennemie != null)
             {
-                CollectibleData item = new CollectibleData
+                EnnemieData item = new EnnemieData
                 {
-                    type = collectible.type,
-                    beat = collectible.beat,
-                    offset = collectible.offset,
-                    heightOffset = collectible.heightOffset,
-                    scale = collectible.transform.localScale
+                    type = ennemie.type,
+                    beat = ennemie.beat,
+                    offset = ennemie.offset,
+                    heightOffset = ennemie.heightOffset,
+                    scale = ennemie.transform.localScale
                 };
 
-                saveObject.collectibles.Add(item);
+                saveObject.ennemies.Add(item);
             }
         }
 
@@ -121,43 +120,42 @@ public class CollectibleCreator : MonoBehaviour
 
         float baseDistance = beatData.firstBeatOffset * vehicleData.speed;
 
-        Dictionary<CollectibleType, GameObject> collectibleByType = new();
+        Dictionary<EnnemieType, GameObject> ennemieByType = new();
         foreach (GameObject coll in prefabs)
         {
-            Collectible collectibleScript = coll.GetComponent<Collectible>();
-            if (collectibleScript != null)
+            Ennemie ennemieScript = coll.GetComponent<Ennemie>();
+            if (ennemieScript != null)
             {
-                collectibleByType.Add(collectibleScript.type, coll);
+                ennemieByType.Add(ennemieScript.type, coll);
             }
         }
 
 
-        foreach (CollectibleData collectibleData in saveObject.collectibles)
+        foreach (EnnemieData ennemieData in saveObject.ennemies)
         {
-            float distance = baseDistance + secPerBeat * vehicleData.speed * collectibleData.beat;
-            Debug.Log(distance);
+            float distance = baseDistance + secPerBeat * vehicleData.speed * ennemieData.beat;
             // Spawn the collectible
             Vector3 spawnPosition = new Vector3();
             Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, vehicleData.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
-            GameObject collectibleBase;
-            collectibleByType.TryGetValue(collectibleData.type, out collectibleBase);
+            GameObject ennemieBase;
+            ennemieByType.TryGetValue(ennemieData.type, out ennemieBase);
 
-            if (collectibleBase != null)
+            if (ennemieBase != null)
             {
-                GameObject collectible = Instantiate(collectibleBase, spawnPosition, spawnRotation);
-                collectible.transform.localScale = collectibleData.scale;
-                collectible.transform.position = pathCreator.path.GetPointAtDistance(distance, vehicleData.endOfPathInstruction) + (collectible.transform.right * collectibleData.offset) + (collectible.transform.up * collectibleData.heightOffset);
-                collectible.transform.parent = transform;
+                GameObject ennemie = Instantiate(ennemieBase, spawnPosition, spawnRotation);
+                ennemie.transform.localScale = ennemieData.scale;
+                ennemie.transform.position = pathCreator.path.GetPointAtDistance(distance, vehicleData.endOfPathInstruction) + (ennemie.transform.right * ennemieData.offset) + (ennemie.transform.up * ennemieData.heightOffset);
+                ennemie.transform.parent = transform;
 
-                Collectible collectibleScript = collectible.GetComponent<Collectible>();
+                Ennemie ennemieScript = ennemie.GetComponent<Ennemie>();
 
-                if (collectibleScript != null)
+                if (ennemieScript != null)
                 {
-                    collectibleScript.type = collectibleData.type;
-                    collectibleScript.heightOffset = collectibleData.heightOffset;
-                    collectibleScript.beat = collectibleData.beat;
-                    collectibleScript.offset = collectibleData.offset;
+                    ennemieScript.type = ennemieData.type;
+                    ennemieScript.heightOffset = ennemieData.heightOffset;
+                    ennemieScript.beat = ennemieData.beat;
+                    ennemieScript.offset = ennemieData.offset;
                 }
             }
 
@@ -175,13 +173,14 @@ public class CollectibleCreator : MonoBehaviour
         BeatAnalyzer beatAnalyzer = GetComponent<BeatAnalyzer>();
         if (beatAnalyzer == null)
         {
+            
             return;
         }
         
         GameObject content = prefab[UnityEngine.Random.Range(0, prefab.Length)]; 
 
-        Collectible collectible = content.GetComponent<Collectible>();
-        if (collectible == null)
+        Ennemie ennemie = content.GetComponent<Ennemie>();
+        if (ennemie == null)
         {
             return;
         }
@@ -219,15 +218,15 @@ public class CollectibleCreator : MonoBehaviour
 
                 GameObject cube = Instantiate(content, spawnPosition, spawnRotation);
                 cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                cube.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (cube.transform.right * spawnOffset) + (cube.transform.up * collectible.heightOffset);
+                cube.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (cube.transform.right * spawnOffset) + (cube.transform.up * ennemie.heightOffset);
                 cube.transform.parent = transform;
 
-                Collectible cubeCollectible = cube.GetComponent<Collectible>();
-                if (cubeCollectible != null)
+                Ennemie ennemieSpawned = cube.GetComponent<Ennemie>();
+                if (ennemieSpawned != null)
                 {
-                    cubeCollectible.beat = i;
-                    cubeCollectible.offset = spawnOffset;
-                    cubeCollectible.heightOffset = collectible.heightOffset;
+                    ennemieSpawned.beat = i;
+                    ennemieSpawned.offset = spawnOffset;
+                    ennemieSpawned.heightOffset = ennemie.heightOffset;
                 }
 
                 currentGroupSize++;
@@ -257,7 +256,7 @@ public class CollectibleCreator : MonoBehaviour
         }
     }
 
-    public void updateCollectible(Collectible inCollectible)
+    public void updateEnnemie(Ennemie inEnnemie)
     {
         PathFollower currentVehicle = vehicle.GetComponent<PathFollower>();
         if (currentVehicle == null)
@@ -276,18 +275,18 @@ public class CollectibleCreator : MonoBehaviour
 
         float baseDistance = beatAnalyzer.firstBeatOffset * currentVehicle.speed;
 
-        float distance = baseDistance + secPerBeat * currentVehicle.speed * inCollectible.beat;
+        float distance = baseDistance + secPerBeat * currentVehicle.speed * inEnnemie.beat;
 
        
         // Spawn the collectible
         Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
 
-        GameObject collectible = inCollectible.gameObject;
-        collectible.transform.localScale = inCollectible.transform.localScale;
-        collectible.transform.rotation = spawnRotation;
-        collectible.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (collectible.transform.right * inCollectible.offset) + (collectible.transform.up * inCollectible.heightOffset);
-        collectible.transform.parent = transform;
+        GameObject ennemie = inEnnemie.gameObject;  
+        ennemie.transform.localScale = inEnnemie.transform.localScale;
+        ennemie.transform.rotation = spawnRotation;
+        ennemie.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (ennemie.transform.right * inEnnemie.offset) + (ennemie.transform.up * inEnnemie.heightOffset);
+        ennemie.transform.parent = transform;
     }
 
     [System.Serializable]
@@ -295,13 +294,13 @@ public class CollectibleCreator : MonoBehaviour
     {
         public VehicleData vehicleData;
         public BeatData beatData;
-        public List<CollectibleData> collectibles;
+        public List<EnnemieData> ennemies;
     }
 
     [System.Serializable]
-    public struct CollectibleData
+    public struct EnnemieData
     {
-        public CollectibleType type;
+        public EnnemieType type;
         public Int32 beat;
         public float offset;
         public float heightOffset;

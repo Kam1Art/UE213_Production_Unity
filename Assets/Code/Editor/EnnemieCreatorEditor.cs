@@ -2,8 +2,8 @@ using PathCreation;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(CollectibleCreator))]
-public class CollectibleCreatorEditor : Editor
+[CustomEditor(typeof(EnnemieCreator))]
+public class EnnemieCreatorEditor : Editor
 {
     SerializedProperty prefabs;
     SerializedProperty randPrefab;
@@ -17,7 +17,7 @@ public class CollectibleCreatorEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        CollectibleCreator myScript = (CollectibleCreator)target;
+        EnnemieCreator myScript = (EnnemieCreator)target;
         myScript.pathCreator = (PathCreator)EditorGUILayout.ObjectField("Path", myScript.pathCreator, typeof(PathCreator), true);
         myScript.vehicle = (GameObject)EditorGUILayout.ObjectField("Vehicle", myScript.vehicle, typeof(GameObject), true);
 
@@ -48,12 +48,12 @@ public class CollectibleCreatorEditor : Editor
         EditorGUILayout.LabelField("Saves Manager", EditorStyles.boldLabel);
         myScript.fileName = EditorGUILayout.TextField("File Name", myScript.fileName);
 
-        if (GUILayout.Button("Save collectibles"))
+        if (GUILayout.Button("Save Ennemies"))
         {
             myScript.Save();
         }
 
-        if (GUILayout.Button("Load collectibles"))
+        if (GUILayout.Button("Load Ennemies"))
         {
             myScript.Load();
         }

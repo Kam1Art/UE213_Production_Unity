@@ -3,12 +3,14 @@ using PathCreation.Examples;
 using System;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class Ennemie : MonoBehaviour
 {
-    public CollectibleType type;
+    public EnnemieType type;
+    public PathFollower vehicle;
     public float heightOffset;
     public Int32 beat;
     public float offset;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,10 +33,10 @@ public class Collectible : MonoBehaviour
 
         if (transform.parent != null)
         {
-            CollectibleCreator creator = transform.parent.GetComponent<CollectibleCreator>();
+            EnnemieCreator creator = transform.parent.GetComponent<EnnemieCreator>();
             if (creator != null)
             {
-                creator.updateCollectible(this);
+                creator.updateEnnemie(this);
             }
         }
     }
@@ -42,15 +44,27 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            PathFollower vehicle = other.GetComponent<PathFollower>();
+
+            if(type == EnnemieType.UpsideDown)
+            {
+                vehicle.RotateCamera();
+            }
+
+            if(type == EnnemieType.Slow)
+            {
+                vehicle.speed = 1.5f;
+            }
         }
     }
 }
 
-
-public enum CollectibleType { 
-    Cube,
-    Sphere
+public enum EnnemieType { 
+    UpsideDown,
+    Slow
 };
+
+

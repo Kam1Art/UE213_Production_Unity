@@ -19,7 +19,7 @@ public class BeatAnalyzer : MonoBehaviour
     void Start()
     {
         //Start the music
-        musicSource.Play();
+        //musicSource.Play();
     }
 
     // Update is called once per frame

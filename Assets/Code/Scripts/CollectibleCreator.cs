@@ -53,7 +53,8 @@ public class CollectibleCreator : MonoBehaviour
                     beat = collectible.beat,
                     offset = collectible.offset,
                     heightOffset = collectible.heightOffset,
-                    scale = collectible.transform.localScale
+                    scale = collectible.transform.localScale,
+                    rotation = collectible.transform.localEulerAngles
                 };
 
                 saveObject.collectibles.Add(item);
@@ -149,6 +150,7 @@ public class CollectibleCreator : MonoBehaviour
                 collectible.transform.localScale = collectibleData.scale;
                 collectible.transform.position = pathCreator.path.GetPointAtDistance(distance, vehicleData.endOfPathInstruction) + (collectible.transform.right * collectibleData.offset) + (collectible.transform.up * collectibleData.heightOffset);
                 collectible.transform.parent = transform;
+                collectible.transform.rotation = Quaternion.Euler(collectibleData.rotation);
 
                 Collectible collectibleScript = collectible.GetComponent<Collectible>();
 
@@ -228,6 +230,7 @@ public class CollectibleCreator : MonoBehaviour
                     cubeCollectible.beat = i;
                     cubeCollectible.offset = spawnOffset;
                     cubeCollectible.heightOffset = collectible.heightOffset;
+                    cube.transform.localRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(cubeCollectible.rotationNeeded);
                 }
 
                 currentGroupSize++;
@@ -306,6 +309,7 @@ public class CollectibleCreator : MonoBehaviour
         public float offset;
         public float heightOffset;
         public Vector3 scale;
+        public Vector3 rotation;
     }
 
     [System.Serializable]

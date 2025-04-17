@@ -5628,6 +5628,7 @@ MonoBehaviour:
   pathCreator: {fileID: 1751585375}
   endOfPathInstruction: 0
   camera: {fileID: 1514366758}
+  audioSource: {fileID: 0}
   speed: 2
   widthOffset: 1
   offsetSpeed: 3
@@ -10109,7 +10110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5df4735192845740bd11076dc9cdc99, type: 2}
+  - {fileID: 2100000, guid: a3e6c21f09142f544b7d6bfd67fe09aa, type: 2}
   - {fileID: 2100000, guid: c1d8d882244c5344fa86a8fd23246f81, type: 2}
   - {fileID: 2100000, guid: c1d8d882244c5344fa86a8fd23246f81, type: 2}
   m_StaticBatchInfo:

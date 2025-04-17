@@ -56,6 +56,11 @@ public class Ennemie : MonoBehaviour
             {
                 vehicle.SlowDown();
             }
+
+            if(type == EnnemieType.Damage)
+            {
+                vehicle.Damage();
+            }
         }
     }
 
@@ -63,7 +68,8 @@ public class Ennemie : MonoBehaviour
 
 public enum EnnemieType { 
     UpsideDown,
-    Slow
+    Slow,
+    Damage
 };
 
 

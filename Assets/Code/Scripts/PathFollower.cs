@@ -22,12 +22,14 @@ namespace PathCreation.Examples
         public bool startFromEnd = false;
         public float offset { get; set; }
         public float timeToTravel { get; set; }
+        public int life =3;
 
         private float distanceTravelled;
         private float currentOffset;
         private InputSystem_Actions controls;
         private bool canRotate = true;
         private bool isRotated = false;
+        private float test;
 
 
         public void OnEnable()
@@ -83,10 +85,16 @@ namespace PathCreation.Examples
 
         void Update()
         {
+            test = Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + 10, Time.deltaTime * 10);
             
             if (isRotated == true && canRotate == true)
             {
                 camera.transform.Rotate(0, 0, Mathf.MoveTowards(0, 180, Time.deltaTime * 180));
+            }
+
+            if (life <= 0)
+            {
+                speed = 0;
             }
             
             if (pathCreator != null)
@@ -134,7 +142,13 @@ namespace PathCreation.Examples
         {
             speed = speed / 2;
             audioSource.pitch = audioSource.pitch / 2;
+            //camera.transform.position = new Vector3(test, camera.transform.position.y, camera.transform.position.z);
             StartCoroutine(ResetSpeed(3f));
+        }
+
+        public void Damage()
+        {
+            life = life - 1;
         }
 
         IEnumerator ResetSpeed(float duration)

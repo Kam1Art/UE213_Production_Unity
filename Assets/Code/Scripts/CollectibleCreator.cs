@@ -32,7 +32,7 @@ public class CollectibleCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Save()
@@ -75,7 +75,7 @@ public class CollectibleCreator : MonoBehaviour
         }
 
         BeatAnalyzer beatAnalyzer = GetComponent<BeatAnalyzer>();
-        if (beatAnalyzer != null )
+        if (beatAnalyzer != null)
         {
             BeatData beatData = new BeatData
             {
@@ -88,16 +88,16 @@ public class CollectibleCreator : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(saveObject);
-        File.WriteAllText(Application.dataPath + "/Saves/" + fileName + ".json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/" + fileName + ".json", json);
 
     }
 
     public void Load()
     {
-        string filePath = Application.dataPath + "/Saves/" + fileName + ".json";
-        if (File.Exists(filePath))
+        TextAsset targetFile = Resources.Load<TextAsset>(fileName);
+        if (targetFile)
         {
-            string saveString = File.ReadAllText(filePath);
+            string saveString = targetFile.text;
 
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
@@ -278,7 +278,7 @@ public class CollectibleCreator : MonoBehaviour
 
         float distance = baseDistance + secPerBeat * currentVehicle.speed * inCollectible.beat;
 
-       
+
         // Spawn the collectible
         Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 

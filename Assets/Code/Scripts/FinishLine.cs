@@ -12,6 +12,12 @@ public class FinishLine : MonoBehaviour
             FinishLineMenu.SetActive(true);
             pauseButton.SetActive(false);
             Time.timeScale = 0;
+            AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+            foreach (AudioSource a in audios)
+            {
+                a.Pause();
+            }
         }
     }
     public void Home()

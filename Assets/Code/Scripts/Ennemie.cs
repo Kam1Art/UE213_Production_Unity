@@ -64,6 +64,11 @@ public class Ennemie : MonoBehaviour
         }
     }
 
+    public void UnWanted()
+    {
+        Destroy(gameObject);
+    }
+
 }
 
 public enum EnnemieType { 

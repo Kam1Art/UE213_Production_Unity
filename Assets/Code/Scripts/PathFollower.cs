@@ -29,7 +29,7 @@ namespace PathCreation.Examples
         private InputSystem_Actions controls;
         private bool canRotate = true;
         private bool isRotated = false;
-        private float test;
+        private bool test = false;
 
 
         public void OnEnable()
@@ -85,7 +85,10 @@ namespace PathCreation.Examples
 
         void Update()
         {
-            test = Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + 10, Time.deltaTime * 10);
+            if (test == true)
+            {
+                camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + cameraSlownessRange, Time.deltaTime * cameraSlownessRange), camera.transform.position.y, camera.transform.position.z);
+            }else camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + cameraSlownessRange, Time.deltaTime * cameraSlownessRange), camera.transform.position.y, camera.transform.position.z); 
             
             if (isRotated == true && canRotate == true)
             {
@@ -142,7 +145,7 @@ namespace PathCreation.Examples
         {
             speed = speed / 2;
             audioSource.pitch = audioSource.pitch / 2;
-            //camera.transform.position = new Vector3(test, camera.transform.position.y, camera.transform.position.z);
+            test = true;
             StartCoroutine(ResetSpeed(3f));
         }
 
@@ -156,6 +159,7 @@ namespace PathCreation.Examples
             yield return new WaitForSeconds(duration);
             speed = speed * 2;
             audioSource.pitch = audioSource.pitch * 2;
+            test = false;
         }
 
 

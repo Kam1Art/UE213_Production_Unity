@@ -25,7 +25,8 @@ public class ItemManager : MonoBehaviour
 
                 if (ennemie.beat == collectible.beat && ennemie.offset == collectible.offset)
                 {
-                    ennemiesInGame[i].SetActive(false);
+                    Debug.Log(ennemie);
+                    ennemie.UnWanted();
                 }
 
             }

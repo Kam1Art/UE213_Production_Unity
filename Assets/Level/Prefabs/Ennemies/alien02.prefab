@@ -123,7 +123,6 @@ MonoBehaviour:
   heightOffset: 0.35
   beat: 0
   offset: 0
-  self: {fileID: 0}
   rotationNeeded: {x: 0, y: 0, z: 90}
 --- !u!135 &-240298782839229609
 SphereCollider:

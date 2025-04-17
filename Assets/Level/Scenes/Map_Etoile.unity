@@ -12497,11 +12497,11 @@ MonoBehaviour:
   pathCreator: {fileID: 1751585375}
   vehicle: {fileID: 560938462}
   prefabs:
-  - {fileID: 6456044512425226224, guid: 01194ce9e97a08349ae03ace257260bb, type: 3}
-  - {fileID: 3707396817952983926, guid: 80ddf2b70eb5e514aa97a0de252e9fc4, type: 3}
+  - {fileID: 6353112602542250699, guid: 832410a5cdeaf804cb66d73e3103e166, type: 3}
+  - {fileID: 8282583321446342127, guid: 21568fa716a01b447b62252373a79372, type: 3}
   prefab:
-  - {fileID: 6456044512425226224, guid: 01194ce9e97a08349ae03ace257260bb, type: 3}
-  - {fileID: 3707396817952983926, guid: 80ddf2b70eb5e514aa97a0de252e9fc4, type: 3}
+  - {fileID: 6353112602542250699, guid: 832410a5cdeaf804cb66d73e3103e166, type: 3}
+  - {fileID: 8282583321446342127, guid: 21568fa716a01b447b62252373a79372, type: 3}
   beatsBetweenSpawn: 1
   spawnGroupSize: 1
   beatsBetweenGroup: 2

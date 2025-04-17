@@ -9,12 +9,12 @@ public class Ennemie : MonoBehaviour
     public float heightOffset;
     public Int32 beat;
     public float offset;
+    public Vector3 rotationNeeded;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        
+    {   
     }
 
     // Update is called once per frame
@@ -42,12 +42,7 @@ public class Ennemie : MonoBehaviour
 #endif
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Collectible"))
-        {
-            Destroy(gameObject);
-        }
-
+    {   
         if (other.CompareTag("Player"))
         {
             PathFollower vehicle = other.GetComponent<PathFollower>();
@@ -63,6 +58,7 @@ public class Ennemie : MonoBehaviour
             }
         }
     }
+
 }
 
 public enum EnnemieType { 

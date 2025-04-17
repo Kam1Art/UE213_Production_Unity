@@ -52,7 +52,8 @@ public class EnnemieCreator : MonoBehaviour
                     beat = ennemie.beat,
                     offset = ennemie.offset,
                     heightOffset = ennemie.heightOffset,
-                    scale = ennemie.transform.localScale
+                    scale = ennemie.transform.localScale,
+                    rotation = ennemie.transform.localEulerAngles,
                 };
 
                 saveObject.ennemies.Add(item);
@@ -147,6 +148,7 @@ public class EnnemieCreator : MonoBehaviour
                 ennemie.transform.localScale = ennemieData.scale;
                 ennemie.transform.position = pathCreator.path.GetPointAtDistance(distance, vehicleData.endOfPathInstruction) + (ennemie.transform.right * ennemieData.offset) + (ennemie.transform.up * ennemieData.heightOffset);
                 ennemie.transform.parent = transform;
+                ennemie.transform.rotation = Quaternion.Euler(ennemieData.rotation);
 
                 Ennemie ennemieScript = ennemie.GetComponent<Ennemie>();
 
@@ -211,22 +213,25 @@ public class EnnemieCreator : MonoBehaviour
             
             if (distance < pathCreator.path.length)
             {
-                Debug.Log(distance);
+
                 // Spawn ennemie
                 Vector3 spawnPosition = new Vector3();
                 Quaternion spawnRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(0, 0, 90);
 
                 GameObject newEnnemie = Instantiate(content, spawnPosition, spawnRotation);
-                //newEnnemie.transform.localScale = new Vector3(1f, 1f, 1f);
+                Ennemie ennemieSpawned = newEnnemie.GetComponent<Ennemie>();
                 newEnnemie.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (newEnnemie.transform.right * spawnOffset) + (newEnnemie.transform.up * ennemie.heightOffset);
                 newEnnemie.transform.parent = transform;
+                
 
-                Ennemie ennemieSpawned = newEnnemie.GetComponent<Ennemie>();
+               
                 if (ennemieSpawned != null)
                 {
                     ennemieSpawned.beat = i;
                     ennemieSpawned.offset = spawnOffset;
                     ennemieSpawned.heightOffset = ennemie.heightOffset;
+                    newEnnemie.transform.localRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(ennemieSpawned.rotationNeeded);
+                    
                 }
 
                 currentGroupSize++;
@@ -287,6 +292,7 @@ public class EnnemieCreator : MonoBehaviour
         ennemie.transform.rotation = spawnRotation;
         ennemie.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (ennemie.transform.right * inEnnemie.offset) + (ennemie.transform.up * inEnnemie.heightOffset);
         ennemie.transform.parent = transform;
+        ennemie.transform.localRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(inEnnemie.rotationNeeded);
     }
 
     [System.Serializable]
@@ -305,6 +311,7 @@ public class EnnemieCreator : MonoBehaviour
         public float offset;
         public float heightOffset;
         public Vector3 scale;
+        public Vector3 rotation;
     }
 
     [System.Serializable]

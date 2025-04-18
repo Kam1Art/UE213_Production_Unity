@@ -46,10 +46,23 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ScoreManager.instance.AddPoint();
-            GetComponent<Renderer>().enabled = false;
-            audioSource.Play();
-            Destroy(gameObject, audioSource.clip.length);
+            if (type == CollectibleType.Star)
+            {
+                ScoreManager.instance.AddPoint();
+                GetComponent<Renderer>().enabled = false;
+                audioSource.Play();
+                Destroy(gameObject, audioSource.clip.length);
+            }
+
+            if (type == CollectibleType.Boost)
+            {
+                ScoreManager.instance.AddPoint();
+                GetComponent<Renderer>().enabled = false;
+                other.GetComponent<PathFollower>().SpeedUp();
+                audioSource.Play();
+                Destroy(gameObject, audioSource.clip.length);
+            }
+            
         }
     }
 }
@@ -57,5 +70,6 @@ public class Collectible : MonoBehaviour
 
 public enum CollectibleType { 
     Star,
+    Boost
 
 };

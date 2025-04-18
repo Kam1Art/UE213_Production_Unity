@@ -74,6 +74,7 @@ namespace PathCreation.Examples
 
         void Start()
         {
+            
             currentOffset = offset;
             distanceTravelled = 0f;
 
@@ -158,6 +159,13 @@ namespace PathCreation.Examples
             StartCoroutine(ResetSpeed(3f));
         }
 
+        public void SpeedUp()
+        {
+            speed = speed * 1.5f;
+            audioSource.pitch = audioSource.pitch * 1.5f;
+            StartCoroutine(ResetSpeed2(3f));
+        }
+
         public void Damage()
         {
             life = life - 1;
@@ -170,7 +178,12 @@ namespace PathCreation.Examples
             audioSource.pitch = audioSource.pitch * 2;
         }
 
-
+        IEnumerator ResetSpeed2(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            speed = speed / 1.5f;
+            audioSource.pitch = audioSource.pitch / 1.5f;
+        }
 
         IEnumerator ResetCanRotate(float duration)
         {

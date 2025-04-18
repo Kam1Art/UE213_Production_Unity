@@ -343,6 +343,8 @@ MonoBehaviour:
   beat: 45
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &35921210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -492,6 +494,9 @@ MonoBehaviour:
   beat: 71
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &48193695
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +656,9 @@ MonoBehaviour:
   beat: 83
   offset: -1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &63412559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1142,6 +1150,8 @@ MonoBehaviour:
   beat: 62
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &89124690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1357,6 +1367,9 @@ MonoBehaviour:
   beat: 29
   offset: 0
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &96333916
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1569,6 +1582,9 @@ MonoBehaviour:
   beat: 74
   offset: 1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &119600298
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1955,6 +1971,9 @@ MonoBehaviour:
   beat: 44
   offset: 0
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &141517908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2049,9 @@ MonoBehaviour:
   beat: 116
   offset: 1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &141517912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2337,6 +2359,8 @@ MonoBehaviour:
   beat: 105
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &223737970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2635,6 +2659,8 @@ MonoBehaviour:
   beat: 92
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &244919675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2844,6 +2870,8 @@ MonoBehaviour:
   beat: 25
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &246773604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3057,6 +3085,8 @@ MonoBehaviour:
   beat: 102
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &280318985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3206,6 +3236,9 @@ MonoBehaviour:
   beat: 80
   offset: -1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &283524767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3729,6 +3762,9 @@ MonoBehaviour:
   beat: 89
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &317002773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3953,6 +3989,8 @@ MonoBehaviour:
   beat: 115
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &339138607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4348,6 +4386,8 @@ MonoBehaviour:
   beat: 97
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &377638566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4581,6 +4621,9 @@ MonoBehaviour:
   beat: 95
   offset: -1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &411250266
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5122,6 +5165,9 @@ MonoBehaviour:
   beat: 65
   offset: -1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &495043682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5715,6 +5761,9 @@ MonoBehaviour:
   beat: 119
   offset: 0
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1001 &546152955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5932,7 +5981,6 @@ MonoBehaviour:
   heightOffset: 0.36
   vehiculeRotation: {x: 180, y: 0, z: 90}
   startFromEnd: 0
-  life: 3
   meshRenderer: {fileID: 560938465}
   materials:
   - {fileID: 2100000, guid: 38e69d804e0097e458f5277e34f6e81d, type: 2}
@@ -6586,6 +6634,9 @@ MonoBehaviour:
   beat: 47
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &631248524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6724,6 +6775,8 @@ MonoBehaviour:
   beat: 110
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &650202132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7131,6 +7184,9 @@ MonoBehaviour:
   beat: 14
   offset: 0
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &698735002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7258,6 +7314,9 @@ MonoBehaviour:
   beat: 86
   offset: 0
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &706873125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7999,6 +8058,9 @@ MonoBehaviour:
   beat: 101
   offset: -1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &795440248
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8105,6 +8167,8 @@ MonoBehaviour:
   beat: 77
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &796274107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8231,6 +8295,8 @@ MonoBehaviour:
   beat: 107
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &796959246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8380,6 +8446,9 @@ MonoBehaviour:
   beat: 110
   offset: 0
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &844724499
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,6 +8524,9 @@ MonoBehaviour:
   beat: 92
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &850562324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8507,6 +8579,8 @@ MonoBehaviour:
   beat: 10
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &850562327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8633,6 +8707,8 @@ MonoBehaviour:
   beat: 57
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &872956207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8759,6 +8835,8 @@ MonoBehaviour:
   beat: 95
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &875977375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8908,6 +8986,9 @@ MonoBehaviour:
   beat: 11
   offset: -1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &887525964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9208,6 +9289,9 @@ MonoBehaviour:
   beat: 5
   offset: -1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &915462722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9313,6 +9397,8 @@ MonoBehaviour:
   beat: 82
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &920709514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9593,6 +9679,8 @@ MonoBehaviour:
   beat: 27
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &944964953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9882,6 +9970,9 @@ MonoBehaviour:
   beat: 62
   offset: 1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &982911463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10075,6 +10166,8 @@ MonoBehaviour:
   beat: 55
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &990925259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10309,6 +10402,8 @@ MonoBehaviour:
   beat: 47
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &998479265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10435,6 +10530,8 @@ MonoBehaviour:
   beat: 42
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1013323128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10561,6 +10658,8 @@ MonoBehaviour:
   beat: 100
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1018704840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10797,6 +10896,9 @@ MonoBehaviour:
   beat: 26
   offset: -1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1031927608
 GameObject:
   m_ObjectHideFlags: 0
@@ -10870,6 +10972,9 @@ MonoBehaviour:
   beat: 77
   offset: 1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1031927612
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11026,6 +11131,9 @@ MonoBehaviour:
   beat: 17
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1069015703
 GameObject:
   m_ObjectHideFlags: 0
@@ -11164,6 +11272,8 @@ MonoBehaviour:
   beat: 22
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1069729602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11376,6 +11486,8 @@ MonoBehaviour:
   beat: 72
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1084352298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11610,6 +11722,9 @@ MonoBehaviour:
   beat: 38
   offset: -1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1095278832
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11715,6 +11830,8 @@ MonoBehaviour:
   beat: 52
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1096803445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11841,6 +11958,8 @@ MonoBehaviour:
   beat: 70
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1100410374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12736,6 +12855,9 @@ MonoBehaviour:
   beat: 35
   offset: 0
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1001 &1212594437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13047,6 +13169,8 @@ MonoBehaviour:
   beat: 120
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1236501337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13353,6 +13477,8 @@ MonoBehaviour:
   beat: 65
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1251516903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13479,6 +13605,8 @@ MonoBehaviour:
   beat: 20
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1252247747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13715,6 +13843,9 @@ MonoBehaviour:
   beat: 32
   offset: -1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1307884589
 GameObject:
   m_ObjectHideFlags: 0
@@ -13767,6 +13898,8 @@ MonoBehaviour:
   beat: 50
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1307884592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13916,6 +14049,9 @@ MonoBehaviour:
   beat: 107
   offset: -1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1334361884
 GameObject:
   m_ObjectHideFlags: 0
@@ -14083,6 +14219,8 @@ MonoBehaviour:
   beat: 15
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1339126073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14232,6 +14370,9 @@ MonoBehaviour:
   beat: 56
   offset: 0
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1339309051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14366,6 +14507,8 @@ MonoBehaviour:
   beat: 117
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1356542579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14492,6 +14635,8 @@ MonoBehaviour:
   beat: 35
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1367143819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14878,6 +15023,8 @@ MonoBehaviour:
   beat: 40
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1419498243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15004,6 +15151,8 @@ MonoBehaviour:
   beat: 80
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1439338378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15153,6 +15302,9 @@ MonoBehaviour:
   beat: 104
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1445464739
 GameObject:
   m_ObjectHideFlags: 0
@@ -15228,6 +15380,9 @@ MonoBehaviour:
   beat: 50
   offset: 0
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1445464743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15523,6 +15678,8 @@ MonoBehaviour:
   beat: 30
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1471435790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15756,6 +15913,9 @@ MonoBehaviour:
   beat: 98
   offset: -1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1513567216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16003,6 +16163,9 @@ MonoBehaviour:
   beat: 23
   offset: 1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1520809899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16388,6 +16551,9 @@ MonoBehaviour:
   beat: 53
   offset: 0
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1 &1572708207
 GameObject:
   m_ObjectHideFlags: 0
@@ -16440,6 +16606,8 @@ MonoBehaviour:
   beat: 32
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1572708210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16652,6 +16820,8 @@ MonoBehaviour:
   beat: 67
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1603469415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17235,6 +17405,9 @@ MonoBehaviour:
   beat: 113
   offset: 0
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1622247337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17363,6 +17536,9 @@ MonoBehaviour:
   beat: 20
   offset: 1
   rotationNeeded: {x: 0, y: -89.1, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1640423489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17613,6 +17789,9 @@ MonoBehaviour:
   beat: 41
   offset: 0
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1652199132
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18061,6 +18240,8 @@ MonoBehaviour:
   beat: 12
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1719905487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18563,6 +18744,9 @@ MonoBehaviour:
   beat: 59
   offset: -1
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1793414229
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18668,6 +18852,8 @@ MonoBehaviour:
   beat: 17
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1794776442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19327,6 +19513,8 @@ MonoBehaviour:
   beat: 75
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1899795545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19474,6 +19662,9 @@ MonoBehaviour:
   beat: 8
   offset: 0
   rotationNeeded: {x: 0, y: -90, z: 180}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!23 &1900430409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19666,6 +19857,8 @@ MonoBehaviour:
   beat: 85
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1901459515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19964,6 +20157,8 @@ MonoBehaviour:
   beat: 37
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1939047275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20090,6 +20285,8 @@ MonoBehaviour:
   beat: 112
   offset: -1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1941821446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20216,6 +20413,8 @@ MonoBehaviour:
   beat: 90
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1942094200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20342,6 +20541,8 @@ MonoBehaviour:
   beat: 60
   offset: 1
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1944059670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20491,6 +20692,9 @@ MonoBehaviour:
   beat: 68
   offset: 1
   rotationNeeded: {x: 0, y: 0, z: 90}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
+  canDisapear: 0
 --- !u!1001 &1984229655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20630,6 +20834,8 @@ MonoBehaviour:
   beat: 87
   offset: 0
   rotationNeeded: {x: 90, y: 0, z: 0}
+  audioSource: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &1999748859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21221,42 +21427,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5573091027697688180, guid: 761b412ef27609241b58803430a363d7,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4321348e2c1e00147a67de5908de4de7,
-        type: 3}
-    - target: {fileID: 5573091027697688180, guid: 761b412ef27609241b58803430a363d7,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161625540653346715, guid: 761b412ef27609241b58803430a363d7,
-        type: 3}
-      propertyPath: m_PixelPerfect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6691864049235421092, guid: 761b412ef27609241b58803430a363d7,
         type: 3}
       propertyPath: m_Name
       value: Canvas Score
       objectReference: {fileID: 0}
-    - target: {fileID: 7160638531382881873, guid: 761b412ef27609241b58803430a363d7,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4321348e2c1e00147a67de5908de4de7,
-        type: 3}
-    - target: {fileID: 7160638531382881873, guid: 761b412ef27609241b58803430a363d7,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7289941135544468985, guid: 761b412ef27609241b58803430a363d7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 842
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 7772202031115803904, guid: 761b412ef27609241b58803430a363d7,
         type: 3}
@@ -21266,7 +21445,7 @@ PrefabInstance:
     - target: {fileID: 7772202031115803904, guid: 761b412ef27609241b58803430a363d7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 934.98926
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

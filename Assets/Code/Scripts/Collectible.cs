@@ -11,6 +11,7 @@ public class Collectible : MonoBehaviour
     public float offset;
     public Vector3 rotationNeeded;
     public AudioSource audioSource;
+    public ParticleSystem particleSystem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,23 +47,17 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (type == CollectibleType.Star)
-            {
-                ScoreManager.instance.AddPoint();
-                GetComponent<Renderer>().enabled = false;
-                audioSource.Play();
-                Destroy(gameObject, audioSource.clip.length);
-            }
 
             if (type == CollectibleType.Boost)
-            {
-                ScoreManager.instance.AddPoint();
-                GetComponent<Renderer>().enabled = false;
+            {   
                 other.GetComponent<PathFollower>().SpeedUp();
-                audioSource.Play();
-                Destroy(gameObject, audioSource.clip.length);
             }
             
+            ScoreManager.instance.AddPoint();
+            GetComponent<Renderer>().enabled = false;
+            particleSystem.Play();
+            audioSource.Play();
+            Destroy(gameObject, audioSource.clip.length);
         }
     }
 }

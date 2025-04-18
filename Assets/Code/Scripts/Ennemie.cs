@@ -11,6 +11,8 @@ public class Ennemie : MonoBehaviour
     public float offset;
     public Vector3 rotationNeeded;
     public AudioSource audioSource;
+    public ParticleSystem particleSystem;
+    public bool canDisapear;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,12 +65,13 @@ public class Ennemie : MonoBehaviour
                 vehicle.Damage();
             }
             audioSource.Play();
+            if (canDisapear == true)
+            {
+                GetComponent<Renderer>().enabled = false;   
+            }
+            particleSystem.Play();
+            Destroy(gameObject, audioSource.clip.length);
         }
-    }
-
-    public void UnWanted()
-    {
-        Destroy(gameObject);
     }
 
 }

@@ -5037,7 +5037,7 @@ MonoBehaviour:
   heightOffset: 0.35
   beat: 0
   offset: 0
-  rotationNeeded: {x: 0, y: 0, z: 90}
+  rotationNeeded: {x: -30, y: -35, z: 90}
   audioSource: {fileID: 1759737920529593782}
   particleSystem: {fileID: 7954720546240246685}
   canDisapear: 0

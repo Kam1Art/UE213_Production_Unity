@@ -149,7 +149,6 @@ namespace PathCreation.Examples
         {
             speed = speed / 2;
             audioSource.pitch = audioSource.pitch / 2;
-
             StartCoroutine(ResetSpeed(3f));
         }
 
@@ -163,7 +162,6 @@ namespace PathCreation.Examples
             yield return new WaitForSeconds(duration);
             speed = speed * 2;
             audioSource.pitch = audioSource.pitch * 2;
-
         }
 
 

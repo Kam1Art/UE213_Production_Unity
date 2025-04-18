@@ -10,6 +10,7 @@ public class Ennemie : MonoBehaviour
     public Int32 beat;
     public float offset;
     public Vector3 rotationNeeded;
+    public AudioSource audioSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,6 +62,7 @@ public class Ennemie : MonoBehaviour
             {
                 vehicle.Damage();
             }
+            audioSource.Play();
         }
     }
 

@@ -10,6 +10,7 @@ public class Collectible : MonoBehaviour
     public Int32 beat;
     public float offset;
     public Vector3 rotationNeeded;
+    public AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,13 +47,15 @@ public class Collectible : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ScoreManager.instance.AddPoint();
-            Destroy(gameObject);
+            GetComponent<Renderer>().enabled = false;
+            audioSource.Play();
+            Destroy(gameObject, audioSource.clip.length);
         }
     }
 }
 
 
 public enum CollectibleType { 
-    Cube,
-    Sphere
+    Star,
+
 };

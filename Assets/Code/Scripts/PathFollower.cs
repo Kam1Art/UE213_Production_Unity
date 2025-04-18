@@ -23,6 +23,7 @@ namespace PathCreation.Examples
         public float offset { get; set; }
         public float timeToTravel { get; set; }
         public int life =3;
+        [System.NonSerialized] public bool isAlive = true;
         public MeshRenderer meshRenderer;
         public Material[] materials;
 
@@ -101,7 +102,12 @@ namespace PathCreation.Examples
 
             if (life <= 0)
             {
+                OnDisable();
                 speed = 0;
+                audioSource.Pause();
+
+
+                isAlive = false;
             }
             
             if (pathCreator != null)

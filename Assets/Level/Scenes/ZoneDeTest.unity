@@ -3701,7 +3701,10 @@ MonoBehaviour:
   vehiculeRotation: {x: 0, y: 0, z: 90}
   startFromEnd: 0
   life: 3
-  cameraSlowness: {fileID: 964487831}
+  meshRenderer: {fileID: 560938465}
+  materials:
+  - {fileID: 2100000, guid: 38e69d804e0097e458f5277e34f6e81d, type: 2}
+  - {fileID: 2100000, guid: b709487756db7cc4983a5306851b32dc, type: 2}
 --- !u!65 &560938464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3790,7 +3793,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1514366759}
-  - {fileID: 964487831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &560938468
@@ -6227,37 +6229,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957604484}
   m_Mesh: {fileID: -5076798556035486163, guid: 82a47ac9128740e45ac4f7aeecd0ee0a, type: 3}
---- !u!1 &964487830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964487831}
-  m_Layer: 0
-  m_Name: CameraNewPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &964487831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964487830}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.07761522, y: -0, z: -0, w: 0.9969834}
-  m_LocalPosition: {x: 0, y: 2.91, z: -3.54}
-  m_LocalScale: {x: 0, y: 0, z: 2.9665668}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 560938467}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &967880772
 GameObject:
   m_ObjectHideFlags: 0

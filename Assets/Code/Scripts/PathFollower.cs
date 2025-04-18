@@ -23,6 +23,9 @@ namespace PathCreation.Examples
         public float offset { get; set; }
         public float timeToTravel { get; set; }
         public int life =3;
+        public MeshRenderer meshRenderer;
+        public Material[] materials;
+
 
         private float distanceTravelled;
         private float currentOffset;
@@ -31,8 +34,10 @@ namespace PathCreation.Examples
         private bool isRotated = false;
 
 
+
         public void OnEnable()
         {
+
             if (controls == null)
             {
                 controls = new InputSystem_Actions();
@@ -70,6 +75,11 @@ namespace PathCreation.Examples
         {
             currentOffset = offset;
             distanceTravelled = 0f;
+
+            Material materialInUse = materials[UnityEngine.Random.Range(0, materials.Length)];
+            meshRenderer.material = materialInUse;
+
+
             if (pathCreator != null)
             {
                 // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
@@ -83,7 +93,7 @@ namespace PathCreation.Examples
         }
 
         void Update()
-        {            
+        {   
             if (isRotated == true && canRotate == true)
             {
                 camera.transform.Rotate(0, 0, Mathf.MoveTowards(0, 180, Time.deltaTime * 180));

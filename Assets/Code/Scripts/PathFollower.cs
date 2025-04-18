@@ -22,8 +22,6 @@ namespace PathCreation.Examples
         public bool startFromEnd = false;
         public float offset { get; set; }
         public float timeToTravel { get; set; }
-        public int life =3;
-        [System.NonSerialized] public bool isAlive = true;
         public MeshRenderer meshRenderer;
         public Material[] materials;
 
@@ -100,16 +98,6 @@ namespace PathCreation.Examples
             {
                 camera.transform.Rotate(0, 0, Mathf.MoveTowards(0, 180, Time.deltaTime * 180));
             }
-
-            if (life <= 0)
-            {
-                OnDisable();
-                speed = 0;
-                audioSource.Pause();
-
-
-                isAlive = false;
-            }
             
             if (pathCreator != null)
             {
@@ -168,7 +156,7 @@ namespace PathCreation.Examples
 
         public void Damage()
         {
-            life = life - 1;
+            
         }
 
         IEnumerator ResetSpeed(float duration)

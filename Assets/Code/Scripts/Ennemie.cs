@@ -62,13 +62,16 @@ public class Ennemie : MonoBehaviour
 
             if(type == EnnemieType.Damage)
             {
-                vehicle.Damage();
+                ScoreManager.instance.RemovePoint();
             }
+
             audioSource.Play();
+
             if (canDisapear == true)
             {
                 GetComponent<Renderer>().enabled = false;   
             }
+
             particleSystem.Play();
             Destroy(gameObject, audioSource.clip.length);
         }

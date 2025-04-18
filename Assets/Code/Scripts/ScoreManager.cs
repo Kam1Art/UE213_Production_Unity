@@ -24,12 +24,25 @@ public class ScoreManager : MonoBehaviour
         highscoreText.text = "Highscore : " + highscore.ToString();
     }
 
+    void Update()
+    {
+        if (highscore < score)
+        {
+            PlayerPrefs.SetInt("highscore", score);
+        }
+    }
+
     public void AddPoint()
     {
         score += 1;
         scoreText.text = score.ToString() + " Stars";
 
-        if (highscore < score)
-            PlayerPrefs.SetInt("highscore", score);
+    }
+
+    public void RemovePoint()
+    {
+        score -= 1;
+        scoreText.text = score.ToString() + " Stars";
+
     }
 }

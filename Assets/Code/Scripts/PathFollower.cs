@@ -23,6 +23,7 @@ namespace PathCreation.Examples
         public float offset { get; set; }
         public float timeToTravel { get; set; }
         public int life =3;
+        public Transform cameraSlowness;
 
         private float distanceTravelled;
         private float currentOffset;
@@ -87,8 +88,8 @@ namespace PathCreation.Examples
         {
             if (test == true)
             {
-                camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + cameraSlownessRange, Time.deltaTime * cameraSlownessRange), camera.transform.position.y, camera.transform.position.z);
-            }else camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, camera.transform.position.x + cameraSlownessRange, Time.deltaTime * cameraSlownessRange), camera.transform.position.y, camera.transform.position.z); 
+                camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, cameraSlowness.position.x, Time.deltaTime * 10), Mathf.MoveTowards(camera.transform.position.y, cameraSlowness.position.y, Time.deltaTime * 10), Mathf.MoveTowards(camera.transform.position.z, cameraSlowness.position.z, Time.deltaTime * 10));
+            }else camera.transform.position = new Vector3(Mathf.MoveTowards(cameraSlowness.position.x, camera.transform.position.x , Time.deltaTime * 10), Mathf.MoveTowards(cameraSlowness.position.y, camera.transform.position.y , Time.deltaTime * 10), Mathf.MoveTowards(cameraSlowness.position.z, camera.transform.position.z, Time.deltaTime * 10)); 
             
             if (isRotated == true && canRotate == true)
             {

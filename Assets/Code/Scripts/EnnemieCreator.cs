@@ -222,15 +222,14 @@ public class EnnemieCreator : MonoBehaviour
                 Ennemie ennemieSpawned = newEnnemie.GetComponent<Ennemie>();
                 newEnnemie.transform.position = pathCreator.path.GetPointAtDistance(distance, currentVehicle.endOfPathInstruction) + (newEnnemie.transform.right * spawnOffset) + (newEnnemie.transform.up * ennemie.heightOffset);
                 newEnnemie.transform.parent = transform;
+                newEnnemie.transform.localRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(ennemieSpawned.rotationNeeded);
                 
-
-               
                 if (ennemieSpawned != null)
                 {
                     ennemieSpawned.beat = i;
                     ennemieSpawned.offset = spawnOffset;
                     ennemieSpawned.heightOffset = ennemie.heightOffset;
-                    newEnnemie.transform.localRotation = pathCreator.path.GetRotationAtDistance(distance, currentVehicle.endOfPathInstruction) * Quaternion.Euler(ennemieSpawned.rotationNeeded);
+                    
                     
                 }
 

@@ -23,14 +23,12 @@ namespace PathCreation.Examples
         public float offset { get; set; }
         public float timeToTravel { get; set; }
         public int life =3;
-        public Transform cameraSlowness;
 
         private float distanceTravelled;
         private float currentOffset;
         private InputSystem_Actions controls;
         private bool canRotate = true;
         private bool isRotated = false;
-        private bool test = false;
 
 
         public void OnEnable()
@@ -85,12 +83,7 @@ namespace PathCreation.Examples
         }
 
         void Update()
-        {
-            if (test == true)
-            {
-                camera.transform.position = new Vector3(Mathf.MoveTowards(camera.transform.position.x, cameraSlowness.position.x, Time.deltaTime * 10), Mathf.MoveTowards(camera.transform.position.y, cameraSlowness.position.y, Time.deltaTime * 10), Mathf.MoveTowards(camera.transform.position.z, cameraSlowness.position.z, Time.deltaTime * 10));
-            }else camera.transform.position = new Vector3(Mathf.MoveTowards(cameraSlowness.position.x, camera.transform.position.x , Time.deltaTime * 10), Mathf.MoveTowards(cameraSlowness.position.y, camera.transform.position.y , Time.deltaTime * 10), Mathf.MoveTowards(cameraSlowness.position.z, camera.transform.position.z, Time.deltaTime * 10)); 
-            
+        {            
             if (isRotated == true && canRotate == true)
             {
                 camera.transform.Rotate(0, 0, Mathf.MoveTowards(0, 180, Time.deltaTime * 180));
@@ -146,7 +139,6 @@ namespace PathCreation.Examples
         {
             speed = speed / 2;
             audioSource.pitch = audioSource.pitch / 2;
-            test = true;
             StartCoroutine(ResetSpeed(3f));
         }
 
@@ -160,7 +152,6 @@ namespace PathCreation.Examples
             yield return new WaitForSeconds(duration);
             speed = speed * 2;
             audioSource.pitch = audioSource.pitch * 2;
-            test = false;
         }
 
 
